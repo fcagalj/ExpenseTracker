@@ -1,26 +1,22 @@
 'use strict';
-(function () {
-
 
 angular.module('expenseTrackerApp')
-  .controller('SignupCtrl',['$scope', 'common', function ($scope, common) {
+  .controller('SignupCtrl', function ($scope, Auth, $location) {
     $scope.user = {};
     $scope.errors = {};
 
-
-
-
     $scope.register = function(form) {
       $scope.submitted = true;
+
       if(form.$valid) {
-        common.Auth.createUser({
+        Auth.createUser({
           name: $scope.user.name,
           email: $scope.user.email,
           password: $scope.user.password
         })
         .then( function() {
           // Account created, redirect to home
-          common.$location.path('/');
+          $location.path('/');
         })
         .catch( function(err) {
           err = err.data;
@@ -35,5 +31,4 @@ angular.module('expenseTrackerApp')
       }
     };
 
-  }]);
-})();
+  });

@@ -1,4 +1,4 @@
-// Generated on 2014-12-23 using generator-angular-fullstack 2.0.13
+// Generated on 2015-08-02 using generator-angular-fullstack 2.1.0
 'use strict';
 
 module.exports = function (grunt) {
@@ -16,7 +16,6 @@ module.exports = function (grunt) {
     ngtemplates: 'grunt-angular-templates',
     cdnify: 'grunt-google-cdn',
     protractor: 'grunt-protractor-runner',
-    injector: 'grunt-asset-injector',
     buildcontrol: 'grunt-build-control'
   });
 
@@ -87,7 +86,9 @@ module.exports = function (grunt) {
         files: [
           '{.tmp,<%= yeoman.client %>}/{app,components}/**/*.css',
           '{.tmp,<%= yeoman.client %>}/{app,components}/**/*.html',
+          
           '{.tmp,<%= yeoman.client %>}/{app,components}/**/*.js',
+          
           '!{.tmp,<%= yeoman.client %>}{app,components}/**/*.spec.js',
           '!{.tmp,<%= yeoman.client %>}/{app,components}/**/*.mock.js',
           '<%= yeoman.client %>/assets/images/{,*//*}*.{png,jpg,jpeg,gif,webp,svg}'
@@ -290,17 +291,9 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '.tmp/concat',
-          src: '*/**.js',
+          src: '**/*.js',
           dest: '.tmp/concat'
         }]
-      },
-        options: {
-          add: true,
-          singleQuotes: true
-        },
-
-        your_target: {
-          // Target-specific file lists and/or options go here.
       }
     },
 
@@ -475,10 +468,14 @@ module.exports = function (grunt) {
         },
         files: {
           '<%= yeoman.client %>/index.html': [
-              ['{.tmp,<%= yeoman.client %>}/{app,components}/**/*.js',
-               '!{.tmp,<%= yeoman.client %>}/app/app.js',
-               '!{.tmp,<%= yeoman.client %>}/{app,components}/**/*.spec.js',
-               '!{.tmp,<%= yeoman.client %>}/{app,components}/**/*.mock.js']
+               [
+                 
+                 '{.tmp,<%= yeoman.client %>}/{app,components}/**/*.js',
+                 
+                 '!{.tmp,<%= yeoman.client %>}/app/app.js',               
+                 '!{.tmp,<%= yeoman.client %>}/{app,components}/**/*.spec.js',
+                 '!{.tmp,<%= yeoman.client %>}/{app,components}/**/*.mock.js'               
+               ]
             ]
         }
       },
@@ -500,15 +497,10 @@ module.exports = function (grunt) {
           ]
         }
       }
-    }
+    },
   });
 
-  grunt.loadNpmTasks('grunt-ng-annotate');
-
   // Used for delaying livereload until after server has restarted
-
-
-
   grunt.registerTask('wait', function () {
     grunt.log.ok('Waiting for server reload...');
 

@@ -21,12 +21,16 @@ var all = {
   // Server port
   port: process.env.PORT || 9000,
 
+  // Server IP
+  ip: process.env.IP || 'localhost',
+
   // Should we populate the DB with sample data?
   seedDB: false,
 
   // Secret for session, you will want to change this and make it an environment variable
   secrets: {
-    session: 'expense-tracker-secret'
+    session: 'radar-map1-secret'
+    /* session: 'expense-tracker-secret' */
   },
 
   // List of user roles

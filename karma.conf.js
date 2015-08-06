@@ -21,10 +21,6 @@ module.exports = function(config) {
       'client/bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
       'client/bower_components/lodash/dist/lodash.compat.js',
       'client/bower_components/angular-ui-router/release/angular-ui-router.js',
-      'client/bower_components/ng-table/ng-table.js',
-      'client/bower_components/angular-animate/angular-animate.js',
-      'client/bower_components/angular-strap/dist/angular-strap.js',
-      'client/bower_components/angular-strap/dist/angular-strap.tpl.js',
       'client/app/app.js',
       'client/app/app.coffee',
       'client/app/**/*.js',
@@ -51,6 +47,8 @@ module.exports = function(config) {
       stripPrefix: 'client/'
     },
 
+    
+
     // list of files / patterns to exclude
     exclude: [],
 
@@ -74,7 +72,7 @@ module.exports = function(config) {
     // - Safari (only Mac)
     // - PhantomJS
     // - IE (only Windows)
-    browsers: ['Chrome'],
+    browsers: ['PhantomJS'],
 
 
     // Continuous Integration mode

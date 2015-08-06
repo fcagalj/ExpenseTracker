@@ -27,56 +27,6 @@
     font-style: normal;
 }
 
-.requiredInput.ng-invalid.ng-dirty{
-  padding-left: 25px;
-  background-color: #fcc;
-  border-left: 5px solid red;
-  background-image: url('error.png');
-  background-repeat: no-repeat;
-  background-position: left;
-}
-
-label.required:after{
-  color: red;
-  font-size: 15px;
-  content: ' *';
-}
-
-.requiredInput.ng-pristine{
-  padding-left: 25px;
-  background-color: white;
-  /*background-image: url('success.png');*/
-  /*background-repeat: no-repeat;*/
-  /*background-position: left;*/
-}
-
-.requiredInput.ng-valid.ng-dirty{
-  padding-left: 25px;
-  background-color: lawngreen;
-  background-image: url('success.png');
-  background-repeat: no-repeat;
-  background-position: left;
-}
-.requiredInput.ng-valid.ng-pristine{
-  padding-left: 25px;
-  background-color: lawngreen;
-  background-image: url('success.png');
-  background-repeat: no-repeat;
-  background-position: left;
-}
-
-.requiredInput.ng-invalid.ng-dirty{
-  padding-left: 25px;
-  background-color: palevioletred;
-  background-image: url('error.png');
-  background-repeat: no-repeat;
-  background-position: left;
-}
-
-.well {
-  margin-bottom:0;
-}
-
 /**
  * App-wide Styles
  */
@@ -86,8 +36,4 @@ label.required:after{
     background: #ccc;
     color: #000;
     padding: 0.2em 0;
-}
-.btnContainter > * {
-  width:48%;
-  min-width: 70px;
 }

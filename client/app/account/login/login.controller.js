@@ -1,8 +1,7 @@
 'use strict';
-(function () {
 
 angular.module('expenseTrackerApp')
-  .controller('LoginCtrl',['$scope', 'common', function ($scope, common) {
+  .controller('LoginCtrl', function ($scope, Auth, $location) {
     $scope.user = {};
     $scope.errors = {};
 
@@ -10,13 +9,13 @@ angular.module('expenseTrackerApp')
       $scope.submitted = true;
 
       if(form.$valid) {
-        common.Auth.login({
+        Auth.login({
           email: $scope.user.email,
           password: $scope.user.password
         })
         .then( function() {
           // Logged in, redirect to home
-          common.$location.path('/');
+          $location.path('/');
         })
         .catch( function(err) {
           $scope.errors.other = err.message;
@@ -24,6 +23,4 @@ angular.module('expenseTrackerApp')
       }
     };
 
-  }]);
-
-})();
+  });
